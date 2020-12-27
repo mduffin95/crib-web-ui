@@ -35,6 +35,7 @@ export interface Property {
   toWork: RouteData | null
   banned: boolean
   favorite: boolean
+  floorArea: number
 }
 
 export interface LatLng {

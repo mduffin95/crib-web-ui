@@ -46,6 +46,8 @@
       <v-card-actions v-bind:class="{ 'teal darken-2': props.selected, 'pa-1': true}">
         <b>£{{ props.item.price.amount}} pcm</b>
         <v-spacer></v-spacer>
+        <b>{{props.item.floorArea}} m²</b>
+        <v-spacer></v-spacer>
         <b>{{props.item.toWork ? props.item.toWork.duration.text : ""}}</b>
         <v-spacer></v-spacer>
         <FavoriteBtn :property="props.item" class="small-btn"></FavoriteBtn>
