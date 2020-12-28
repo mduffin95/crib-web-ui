@@ -9,7 +9,7 @@
           <Map ref="map" @propertyClicked="showProperty($event)"></Map>
         </v-flex>
         <v-flex v-if="showChart">
-          <PropertyChart/>
+          <PropertyChart @propertyClicked="showProperty($event)"/>
         </v-flex>
         <v-flex v-if="showList">
           <PropertyList></PropertyList>
