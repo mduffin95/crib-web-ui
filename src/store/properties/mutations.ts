@@ -40,6 +40,12 @@ export const mutations: MutationTree<PropertiesState> = {
   setShowMap (state, show: boolean) {
     state.showMap = show
     state.showList = !show
+    state.showChart = false
+  },
+  setShowChart (state, show: boolean) {
+    state.showChart = show
+    state.showMap = false
+    state.showList = !show
   },
   setShowDetails (state, show: boolean) {
     state.showDetails = show
@@ -47,6 +53,7 @@ export const mutations: MutationTree<PropertiesState> = {
   setShowList (state, show: boolean) {
     state.showList = show
     state.showMap = !show
+    state.showChart = false
   },
   setRoute (state, { property, routedata }) {
     Vue.set(property, 'toWork', routedata)

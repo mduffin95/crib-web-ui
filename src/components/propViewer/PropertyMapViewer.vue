@@ -8,6 +8,9 @@
         <v-flex v-if="showMap" style="max-width: 60%; width: 60%">
           <Map ref="map" @propertyClicked="showProperty($event)"></Map>
         </v-flex>
+        <v-flex v-if="showChart">
+          <PropertyChart/>
+        </v-flex>
         <v-flex v-if="showList">
           <PropertyList></PropertyList>
         </v-flex>
@@ -32,10 +35,11 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import { State, Action, namespace } from 'vuex-class'
 
 import Map from '../map/Map'
+import PropertyChart from '../chart/PropertyChart'
 import PropertyDetails from './Details'
 import eventHub from '../../events'
 import SearchBar from './SearchBar'
@@ -47,7 +51,8 @@ const propns = namespace('properties')
   Map,
   PropertyDetails,
   SearchBar,
-  PropertyList
+  PropertyList,
+  PropertyChart
 }})
 export default class PropertyMapViewer extends Vue {
   @propns.Action getProperties
@@ -63,6 +68,7 @@ export default class PropertyMapViewer extends Vue {
   @propns.State currentProperty
   @propns.State properties
   @propns.State showMap
+  @propns.State showChart
   @propns.State showDetails
   @propns.State showList
   @propns.State maxPrice

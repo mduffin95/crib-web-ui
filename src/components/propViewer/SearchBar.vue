@@ -43,6 +43,9 @@
     <v-btn flat :input-value="showMap" @click="toggleMap()">
       <v-icon>map</v-icon>
     </v-btn>
+    <v-btn flat :input-value="showChart" @click="toggleChart()">
+      <v-icon>map</v-icon>
+    </v-btn>
     <v-btn flat :input-value="showDetails" @click="toggleDetails()">
       <v-icon>description</v-icon>
     </v-btn>
@@ -80,6 +83,7 @@ export default class SearchBar extends Vue {
   @propns.State currentIndex
   @propns.State properties
   @propns.State showMap
+  @propns.State showChart
   @propns.State showDetails
   @propns.State showList
   @propns.State onlyFavorite
@@ -90,6 +94,7 @@ export default class SearchBar extends Vue {
   @propns.Mutation setOnlyFavorite
   @propns.Action setCurrentProperty
   @propns.Action toggleMap
+  @propns.Action toggleChart
   @propns.Action toggleDetails
   @propns.Action toggleList
   @dirns.State('maxDuration') _maxDuration

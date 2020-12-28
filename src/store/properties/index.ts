@@ -11,6 +11,7 @@ export const state: PropertiesState = {
   currentProperty: null,
   currentIndex: 0,
   showMap: false,
+  showChart: false,
   showDetails: true,
   showList: true,
   maxPrice: 1450

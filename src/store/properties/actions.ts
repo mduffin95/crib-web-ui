@@ -39,6 +39,9 @@ export const actions: ActionTree<PropertiesState, RootState> = {
   toggleMap ({ state, commit }) {
     commit('setShowMap', !state.showMap)
   },
+  toggleChart ({ state, commit }) {
+    commit('setShowChart', !state.showChart)
+  },
   toggleDetails ({ state, commit }) {
     commit('setShowDetails', !state.showDetails)
   },
