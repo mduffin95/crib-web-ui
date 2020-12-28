@@ -18,13 +18,9 @@ export default class PropertyChart extends Vue {
   onClickEvent(evt, array) {
     if (array.length != 0) {
         var position = array[0]._index;
-        // var activeElement = this.tooltip._data.datasets[0].data[position]
         var activeElement = this.propsWithArea[position]
         this.selectMarker(activeElement)
-        console.log(activeElement);
-    } else {
-        console.log("You selected the background!");            
-    }  
+    } 
   }
 
   getPropsWithArea() {
@@ -39,7 +35,6 @@ export default class PropertyChart extends Vue {
   mounted() {
     this.propsWithArea = this.getPropsWithArea()
     var points = this.propsWithArea.map( item => { return { x: item.price.amount, y: item.floorArea }})
-    console.log(points)
     this.renderChart({
         datasets: [{
             label: 'Property prices vs floor area (sq.m.)',

@@ -64,6 +64,9 @@ export const mutations: MutationTree<PropertiesState> = {
   ban (state, { property }) {
     Vue.set(property, 'banned', !property.banned)
   },
+  floorArea (state, { property, area }) {
+    Vue.set(property, 'floorArea', area )
+  },
   setOnlyFavorite (state, favorite: boolean) {
     state.onlyFavorite = favorite
   },

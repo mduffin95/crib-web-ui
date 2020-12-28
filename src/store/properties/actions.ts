@@ -77,6 +77,16 @@ export const actions: ActionTree<PropertiesState, RootState> = {
           dispatch('alert/error', error.message, { root: true })
         })
   },
+  floorArea ({ dispatch, commit }, { property, area }) {
+    propertiesService.floorArea(property, area)
+      .then(
+        () => {
+          commit('floorArea', { property: property, area: area })
+        },
+        error => {
+          dispatch('alert/error', error.message, { root: true })
+        })
+  },
   getSearchAreas ({ dispatch, commit }) {
     propertiesService.searchAreas()
       .then(

@@ -92,6 +92,18 @@ export const propertiesService = {
     return cribReq(config)
       .then(response => {return response.data})
   },
+  floorArea: (property: Property, area: number) => {
+    const config = {
+      method: 'put',
+      url: '/properties/area',
+      data: {
+        prop_id: property.id,
+        area: area 
+      }
+    }
+    return cribReq(config)
+      .then(response => { return response.data })
+  },
   searchAreas: () => {
     const config = {
       method: 'get',
